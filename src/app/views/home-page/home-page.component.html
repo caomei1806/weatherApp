@@ -1,0 +1,39 @@
+<div class="container-fluid m-0 p-0">
+	<div class="violet-focus">
+		<div
+			class="gradient"
+			style="z-index: -2;"
+		></div>
+		<app-search-bar
+			(citySend)="setCity($event)"
+			(localizationSend)="getWeatherByLocalization()"
+			[localizationCityName]="localizationCityName"
+		></app-search-bar>
+	</div>
+	<div class="container-fluid main-box">
+		<div
+			class="box-blur"
+			style="z-index:1;position: absolute;"
+		>
+
+		</div>
+		<div
+			class="gradient"
+			style="z-index:1;position: absolute;"
+		>
+
+		</div>
+		<div
+			id="weather-background"
+			style="z-index:2;position: relative;"
+		>
+			<div class="pt-4">
+				<app-weather-city
+					*ngIf="weather"
+					[weather]="weather"
+				></app-weather-city>
+			</div>
+		</div>
+
+	</div>
+</div>

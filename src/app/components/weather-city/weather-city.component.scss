@@ -1,0 +1,154 @@
+.weather {
+	height: 70vh;
+	width: 60vw;
+	z-index: 3;
+	border-radius: 40px;
+	background-color: rgba(0, 0, 0, 0.17);
+	backdrop-filter: blur(50px) brightness(60%);
+	.current-weather {
+		width: 30%;
+		height: 100%;
+		border-radius: 40px 0 0 40px;
+		background: rgba(#a886f8, 0.09);
+		position: relative;
+		z-index: 1;
+		.content {
+			position: relative;
+			z-index: 2;
+			opacity: 1;
+			p {
+				font-size: 1.4rem;
+			}
+			.d-flex {
+				img {
+					width: 6rem;
+					filter: invert(1);
+				}
+			}
+			.d-flex {
+				.temp-spread {
+				}
+				.sun-actions {
+					.sunrise {
+						img {
+							width: 1.5rem;
+						}
+					}
+					.sunset {
+						img {
+							width: 1.5rem;
+						}
+					}
+				}
+			}
+
+			.w-details {
+				flex-wrap: wrap;
+				.det-box {
+					width: 80%;
+					height: 3rem;
+					background-color: white;
+					border-radius: 0.5rem;
+					background: rgba($color: #000000, $alpha: 0.34);
+
+					.icon-pop {
+						width: 25%;
+						height: 100%;
+						border-radius: 0.46rem 0 0 0.46rem;
+						text-align: center;
+						img {
+							&:first {
+								margin-left: 0.5rem;
+							}
+							width: 2rem;
+						}
+					}
+					.content {
+						h5 {
+							margin-bottom: -8px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	.future-weather {
+		width: 33%;
+		height: 100%;
+		img {
+			filter: invert(1);
+		}
+		.nextWeather {
+			color: rgb(153, 153, 153);
+			.mainInfo {
+				width: 55%;
+				.extendedInfo {
+					background: rgba($color: #000000, $alpha: 0.34);
+					border-radius: 0.5rem;
+					.w-details {
+						flex-wrap: wrap;
+						.det-box {
+							width: 80%;
+							height: 2.5rem;
+
+							.icon-pop {
+								width: 25%;
+								height: 100%;
+								border-radius: 0.46rem 0 0 0.46rem;
+								text-align: center;
+								img {
+									&:first {
+										margin-left: 0.5rem;
+									}
+									width: 1.5rem;
+								}
+							}
+							.content {
+								h5 {
+									margin-bottom: -8px !important;
+									font-size: 1rem;
+								}
+							}
+						}
+					}
+				}
+			}
+			.info {
+				width: 40%;
+				h1 {
+					font-size: 3.4rem;
+				}
+				img {
+					width: 3.5rem;
+					filter: invert(1);
+				}
+				.temp-spread {
+					.min {
+						margin-right: 2.2rem;
+					}
+				}
+			}
+		}
+		.weekWeather {
+			.weatherBox {
+				h5 {
+					color: rgb(153, 153, 153);
+				}
+				.d-flex {
+					img {
+						width: 2rem;
+					}
+					div {
+						font-size: 1.6rem;
+						text-align: right;
+						width: 3rem;
+					}
+				}
+			}
+		}
+	}
+	.map-weather {
+		width: 37%;
+		height: 100%;
+	}
+}

@@ -1,0 +1,31 @@
+.violet-focus {
+	min-height: 15vh;
+	background-color: #100320;
+	position: relative;
+	.gradient {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #140f1d;
+		height: 100%;
+		width: 100%;
+		opacity: 30%;
+	}
+}
+
+.main-box {
+	min-height: calc(85vh - 56px);
+	position: relative;
+	background: url("../../../assets/img/backgrounds/sunset.jpg");
+	background-size: cover;
+	background-position: center;
+
+	.gradient {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: linear-gradient(#100320, transparent);
+		height: 100%;
+		width: 100%;
+	}
+}

@@ -1,0 +1,217 @@
+<div class="container weather d-flex align-items-center justify-content-center p-0">
+	<div
+		class="current-weather pt-5"
+		*ngIf="weather.list.length > 0"
+	>
+		<div class="content text-light">
+			<p class="ml-5">Today: <small class="ml-2 text-danger">{{weather.list[0].weather[0].description}}</small>
+			</p>
+			<div class="d-flex align-items-center justify-content-center">
+				<img
+					id="currentWeather"
+					[src]="iconsUrl[0]"
+					alt=""
+					class="mr-4"
+				>
+				<h1 class="display-4 font-weight-normal">{{weather.list[0].main.temp | number:'1.0-0'}}°C</h1>
+			</div>
+			<div class="d-flex align-items-center justify-content-around">
+				<div class="temp-spread d-flex align-items-center justify-content-center text-center">
+					<div class="min mr-3">
+						<small>min</small>
+						<h4>{{weather.list[0].main.temp_min | number:'1.0-0'}}°C</h4>
+					</div>
+					<div class="max">
+						<small>max</small>
+						<h4>{{weather.list[0].main.temp_max | number:'1.0-0'}}°C</h4>
+					</div>
+				</div>
+				<div class="sun-actions">
+					<div class="sunrise d-flex align-items-center justify-content-center">
+						<img
+							src="../../../assets/img/weather-icons/sun-5.svg"
+							alt=""
+						>
+						<h5 class="pt-2 ml-2 font-weight-normal">{{weather.city.sunrise | date:'hh:mm'}}</h5>
+					</div>
+					<div class="sunset d-flex align-items-center justify-content-center">
+						<img
+							src="../../../assets/img/weather-icons/sunset.svg"
+							alt=""
+						>
+						<h5 class="pt-2 ml-2 font-weight-normal">{{weather.city.sunset | date:'hh:mm'}}</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="w-details d-flex align-items-center justify-content-center mt-3">
+				<div class="det-box mt-3 d-flex align-items-center">
+					<div class="icon-pop bg-primary d-flex justify-content-center">
+						<img
+							src="../../../assets/img/weather-icons/wind.svg"
+							alt=""
+						>
+					</div>
+					<div class="content ml-3">
+						<h5 class="m-0 p-0">{{weather.list[0].wind.speed}} km/h</h5>
+						<small>wind speed</small>
+					</div>
+				</div>
+				<div class="det-box mt-3 d-flex align-items-center">
+					<div class="icon-pop bg-primary d-flex justify-content-center">
+						<img
+							src="../../../assets/img/weather-icons/fluffy-cloud-silhouette.svg"
+							alt=""
+						>
+					</div>
+					<div class="content ml-3">
+						<h5 class="m-0 p-0">{{weather.list[0].clouds.all}}%</h5>
+						<small>cloudiness</small>
+					</div>
+				</div>
+				<div class="det-box mt-3 d-flex align-items-center">
+					<div class="icon-pop bg-primary d-flex justify-content-center">
+						<img
+							src="../../../assets/img/weather-icons/gauge.svg"
+							alt=""
+						>
+					</div>
+					<div class="content ml-3">
+						<h5 class="m-0 p-0">{{weather.list[0].main.pressure}} hPa</h5>
+						<small>air pressure</small>
+					</div>
+				</div>
+				<div class="det-box mt-3 d-flex align-items-center">
+					<div class="icon-pop bg-primary d-flex justify-content-center">
+						<img
+							src="../../../assets/img/weather-icons/rain-5.svg"
+							alt=""
+						>
+					</div>
+					<div class="content ml-3">
+						<h5 class="m-0 p-0">{{weather.list[0].main.humidity}}%</h5>
+						<small>air humidity</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="future-weather">
+		<div
+			class="nextWeather d-flex align-items-center justify-content-center"
+			*ngIf="weather.list.length > 7"
+		>
+			<div
+				class="mainInfo ml-2 mt-3"
+				*ngFor="let a of [].constructor(1); let index = index"
+			>
+				<h4 class="font-weight-light text-light">Tommorow</h4>
+				<div class="extendedInfo">
+					<div class="w-details d-flex align-items-center justify-content-center mt-3">
+						<div class="det-box mt-3 d-flex align-items-center">
+							<div class="icon-pop d-flex justify-content-center">
+								<img
+									src="../../../assets/img/weather-icons/wind.svg"
+									alt=""
+								>
+							</div>
+							<div class="content ml-3">
+								<h5 class="m-0 p-0">{{weather.list[(index+1) * 8].wind.speed}} km/h</h5>
+								<small>wind speed</small>
+							</div>
+						</div>
+						<div class="det-box mt-3 d-flex align-items-center">
+							<div class="icon-pop d-flex justify-content-center">
+								<img
+									src="../../../assets/img/weather-icons/fluffy-cloud-silhouette.svg"
+									alt=""
+								>
+							</div>
+							<div class="content ml-3">
+								<h5 class="m-0 p-0">{{weather.list[(index+1) * 8].clouds.all}}%</h5>
+								<small>cloudiness</small>
+							</div>
+						</div>
+						<div class="det-box mt-3 d-flex align-items-center">
+							<div class="icon-pop d-flex justify-content-center">
+								<img
+									src="../../../assets/img/weather-icons/gauge.svg"
+									alt=""
+								>
+							</div>
+							<div class="content ml-3">
+								<h5 class="m-0 p-0">{{weather.list[(index+1) * 8].main.pressure}} hPa</h5>
+								<small>air pressure</small>
+							</div>
+						</div>
+						<div class="det-box mt-3 mb-3 d-flex align-items-center">
+							<div class="icon-pop d-flex justify-content-center">
+								<img
+									src="../../../assets/img/weather-icons/rain-5.svg"
+									alt=""
+								>
+							</div>
+							<div class="content ml-3">
+								<h5 class="m-0 p-0">{{weather.list[(index+1) * 8].main.humidity}}%</h5>
+								<small>air humidity</small>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+			<div
+				class="info text-center mt-5 ml-2"
+				*ngFor="let a of [].constructor(1); let index = index"
+			>
+				<img
+					id="currentWeather"
+					[src]="iconsUrl[1]"
+					alt=""
+					class="ml-4"
+				>
+				<h1 class="font-weight-normal text-light">{{weather.list[(index+1) * 8].main.temp | number:'1.0-0'}}°C
+				</h1>
+				<div class="temp-spread d-flex align-items-center justify-content-center">
+					<div class="min">
+						<small>min</small>
+						<p>{{weather.list[(index+1) * 8].main.temp_min | number:'1.0-0'}}°C</p>
+					</div>
+					<div class="max">
+						<small>max</small>
+						<p>{{weather.list[(index+1) * 8].main.temp_max | number:'1.0-0'}}°C</p>
+					</div>
+				</div>
+				<div class="weatherDesc text-light">
+					<small>Future weather:</small>
+					<p>{{weather.list[(index+1) * 8].weather[0].description}}</p>
+				</div>
+			</div>
+		</div>
+		<div
+			class="weekWeather"
+			*ngIf="weather.list.length > 29"
+		>
+
+			<div
+				class="weatherBox d-flex align-items-center justify-content-between mt-4 mb-2 ml-2 mr-4"
+				*ngFor="let a of [].constructor(3); let index = index"
+			>
+				<h5 class="font-weight-light ml-4">{{dayOfWeek[index]}}</h5>
+				<div class="d-flex align-items-center justify-content-center">
+					<img
+						id="currentWeather"
+						[src]="iconsUrl[index + 2]"
+						alt=""
+						class=""
+					>
+					<div class="ml-2 text-light">{{weather.list[(index + 2)*8].main.temp | number:'1.0-0'}}°C</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<div class="map-weather"></div>
+</div>

@@ -1,0 +1,19 @@
+.container {
+	z-index: 1;
+	& > * {
+		height: 50px;
+	}
+	input {
+		background: none;
+		width: 35vw;
+		border: 0;
+		outline: 0;
+		border-bottom: 2px solid rgba(68, 47, 109, 0.57);
+		font-size: 2rem;
+		&::placeholder {
+			color: #6646a3;
+			opacity: 1;
+		}
+		color: rgb(151, 52, 68);
+	}
+}

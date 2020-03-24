@@ -1,0 +1,27 @@
+<div class="container d-flex align-items-end justify-content-center pt-4">
+	<img
+		src="../../../assets/img/weather-icons/Icon awesome-map-marked-alt.png"
+		alt=""
+		class="mr-5"
+	>
+	<div class="form-group mr-5 p-0">
+		<input
+			type="text"
+			class="form-control"
+			id="city"
+			[(ngModel)]="cityName"
+			placeholder="{{ localizationCityName }}"
+			(keyup.enter)="redirectName()"
+		>
+		<small
+			id="input-help"
+			class="form-text text-muted invisible"
+		>To show the weather in your area enter the location.</small>
+	</div>
+	<button
+		type="button"
+		class="btn btn-secondary px-5"
+		(click)="redirectName()"
+	>
+		Search</button>
+</div>
